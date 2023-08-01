@@ -1,0 +1,14 @@
+@import "normaalize.scss";
+@import "fonts.scss";
+@import "variables/gloabal.scss";
+@import "themes/light.scss";
+@import "themes/dark.scss";
+
+.app {
+  font: var(--font-m);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
