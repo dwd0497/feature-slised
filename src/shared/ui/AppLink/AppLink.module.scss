@@ -1,0 +1,7 @@
+.AppLink {
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--inverted-primary-color);
+  }
+}
