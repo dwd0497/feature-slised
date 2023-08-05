@@ -6,7 +6,8 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:i18next/recommended",
     ],
     "overrides": [
         {
@@ -28,7 +29,8 @@ module.exports = {
     },
     "plugins": [
         "@typescript-eslint",
-        "react"
+        "react",
+        "i18next",
     ],
     'ignorePatterns': ["/build"],
     "rules": {
@@ -37,5 +39,5 @@ module.exports = {
     },
     "globals": {
         "__IS_DEV__": true,
-    }
+    },
 }
