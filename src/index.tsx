@@ -12,4 +12,4 @@ render(
             <App />
         </ThemeProvider>
     </BrowserRouter>
-, el);
+    , el);
