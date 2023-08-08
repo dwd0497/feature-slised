@@ -2,6 +2,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
     WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin,
 } from 'webpack';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildPaths } from './types/config';
@@ -19,11 +21,12 @@ export function buildPlugins(paths: BuildPaths, isDev: boolean): WebpackPluginIn
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
+        new BundleAnalyzerPlugin(),
     ];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
-        plugins.push(new HotModuleReplacementPlugin());
+        plugins.push(new HotModuleReplacementPlugin({ openAnalyzer: false }));
     }
 
     return plugins;
